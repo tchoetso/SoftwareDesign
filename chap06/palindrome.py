@@ -34,7 +34,16 @@ def middle(word):
 
 
 def is_palindrome(word):
-    """Write a good Docstring here."""
+    """returns whether word is a palindrome or not"""
+       
+    if len(word)<=1:#word can have both odd or even number of letters
+       return True
+    else:
+       if first(word)!= last(word):
+          return False
+       else:
+          return is_palindrome(middle(word))
+ 
+print is_palindrome('tenzin')
+print is_palindrome ('hannah')
 
-    # TODO: fill in the body of this function
-    return True
