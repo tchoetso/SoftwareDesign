@@ -1,0 +1,8 @@
+def is_power(a,b):
+  """returns True for a and a/b power of b"""
+    if a % b != 0:
+        return False
+    elif isPower(a/b,b):
+        return True
+    else
+        return False
