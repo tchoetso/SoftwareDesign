@@ -3,9 +3,7 @@ def is_power(a,b):
     if a % b != 0:
        return False
 
-    elif a/b % b != 0:
-       return True
-    else:
+     else:
        return is_power((a/b),b)
     
 
