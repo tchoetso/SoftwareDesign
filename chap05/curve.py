@@ -28,7 +28,7 @@ def dragon_curve(t,n):
     fd(t)
     x_func(t,n)
 
-dragon_curve(t,10)
+dragon_curve(t,30)
 
 
          
