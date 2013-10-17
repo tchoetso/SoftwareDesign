@@ -3,7 +3,7 @@
 # code works though it takes sometime to print all the pairs on the terminal
 
 def list_words ():
-    """ prints words from words.txt in a list"""
+    """ returns words from words.txt in a list"""
     t = []
     fin = open('words.txt')
     for line in fin:
