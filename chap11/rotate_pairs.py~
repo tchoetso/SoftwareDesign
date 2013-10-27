@@ -32,6 +32,48 @@ def rotate_word(a,b):
             final += chr (new_ordletter)
 
     return final
+def rotate_word(a,b):
+    """Rotates a word by n places.
+
+       a : string
+       b : integer
+
+       Returns: string"""
+    final = ""
+    for letter in a:
+        ordletter = ord(letter)
+        upperend = 123
+        lowerend = 97
+     
+        new_ordletter = (ordletter + b) % upperend
+        if new_ordletter < lowerend :
+               new_ordletter += lowerend
+               final += chr(new_ordletter)
+        else:
+            final += chr (new_ordletter)
+
+    return final
+def rotate_word(a,b):
+    """Rotates a word by n places.
+
+       a : string
+       b : integer
+
+       Returns: string"""
+    final = ""
+    for letter in a:
+        ordletter = ord(letter)
+        upperend = 123
+        lowerend = 97
+     
+        new_ordletter = (ordletter + b) % upperend
+        if new_ordletter < lowerend :
+               new_ordletter += lowerend
+               final += chr(new_ordletter)
+        else:
+            final += chr (new_ordletter)
+
+    return final
 
 def rotate_pairs(word,dict_word):
     """Prints all words in 'words.text' that 
