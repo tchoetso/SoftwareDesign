@@ -23,6 +23,10 @@ repos = [
     'awilkinson88',
     'Brooks-Willis',
     'morganzhu',
+<<<<<<< HEAD
+=======
+    'DaraBehjat',
+>>>>>>> upstream/master
 ]
 
 def run_command(cmd):
@@ -43,6 +47,17 @@ def clone():
         run_command(cmd)
 
 
+<<<<<<< HEAD
+=======
+def pull():
+    for repo in repos:
+        s = 'cd %s; git pull'
+        cmd = s % repo
+        print cmd
+        run_command(cmd)
+
+
+>>>>>>> upstream/master
 def run_python(repo, dirname, filename):
     s = 'cd %s/%s; python %s'
     cmd = s % (repo, dirname, filename)
@@ -57,4 +72,8 @@ def hw3():
         run_python(repo, 'chap03', 'grid.py')
         run_python(repo, 'chap04', 'polygon.py')
 
+<<<<<<< HEAD
 hw3()
+=======
+pull()
+>>>>>>> upstream/master

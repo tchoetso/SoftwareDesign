@@ -23,8 +23,9 @@ def rotate_word(a,b):
                final += chr(new_ordletter)
         else:
             final += chr (new_ordletter)
+
     return final
                
-print rotate_word ('abjurer',13)
+#print rotate_word ('FPENOOYR',13)
 
-       
+print rotate_word ('bob',1)   

@@ -26,6 +26,6 @@ def rotate_word(a,b):
 
     return final
                
-print rotate_word ('FPENOOYR',13)
+#print rotate_word ('FPENOOYR',13)
 
-       
+print rotate_word ('bob',0)   

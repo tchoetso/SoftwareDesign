@@ -1,0 +1,8 @@
+
+def print_word():
+    w = dict_words()
+    for keyword in dict_words():
+        if check(keyword,w):
+           print keyword,keyword[1:],keyword[0] +keyword[2:]
+
+print print_word()
