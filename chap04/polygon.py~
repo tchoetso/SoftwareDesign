@@ -1,13 +1,30 @@
 #Author: Tenzin Choetso
-# Chapter 4 -- 5
+# Chapter 4 
 
 from swampy.TurtleWorld import *
-import math 
+import math
 
 world = TurtleWorld()
 bob = Turtle() #bob needs to defined outside
-bob.delay= 0.05
 
+
+def square(t,length):
+    print t
+    for i in range(4):
+        fd (t,length)
+        lt(t,45)
+
+square(bob,50)
+
+def polygon(t,length,n):
+    print t
+    for i in range(n):
+        fd (t,length)
+        lt(t,360/n)
+
+def circle(t,r):
+    length = (2*math.pi*r)/n # circumference of the cirlce 
+    polygon(t,n,length)
 
 def arc(t,r,angle):
     print t
@@ -20,6 +37,6 @@ def arc(t,r,angle):
         fd (t,steplength)
         lt(t,stepangle)
   
- 
 arc(bob,50,270)
 
+polygon(bob,75,6)
