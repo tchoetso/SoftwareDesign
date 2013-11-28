@@ -5,7 +5,6 @@ http://thinkpython.com
 Copyright 2012 Allen B. Downey
 License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
 
-edited by Tenzin Choetso
 """
 
 import string
@@ -70,15 +69,10 @@ def most_common(hist):
     returns: list of (word, frequency) pairs, sorted by frequency
     """
     t = []
-    res = []
-    for word,freq in hist.items():
-        t.append((freq,word))
-    t.sort (reverse = True)
+    # TODO: fix this
+    return t
 
-    for freq,word in t:
-        res.append((word,freq))
-    return res
-    
+
 def print_most_common(hist, num=10):
     """Prints the most commons words in a histgram and their frequencies.
     
@@ -99,9 +93,7 @@ def subtract(d1, d2):
     returns: new dictionary
     """
     res = {}
-    for key in d1:
-        if key not in d2:
-            res[key] = d1[key]
+    # TODO: fill this is
     return res
 
 
@@ -120,11 +112,8 @@ def random_word(hist):
 
     The probability of each word is proportional to its frequency.
     """
-    t = []
-    for word,freq in hist.items():
-        for i in range(freq):
-            t.append(word)
-    return random.choice (t)
+    # TODO: fix this
+    return 'random word'
 
 
 if __name__ == '__main__':

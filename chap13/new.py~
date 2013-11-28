@@ -1,25 +1,13 @@
-"""This module contains code from
-Think Python by Allen B. Downey
-http://thinkpython.com
-
-Copyright 2012 Allen B. Downey
-License: GNU GPLv3 http://www.gnu.org/licenses/gpl.html
-
-edited by Tenzin Choetso
-"""
-
-import string
 import random
-
+import string
 
 def process_file(filename, skip_header=True):
     """Makes a histogram that contains the words from a file.
 
-    filename: string
-    skip_header: boolean, whether to skip the Gutenberg header
-   
-    Returns: map from each word to the number of times it appears.
-    """
+filename: string
+skip_header: boolean, whether to skip the Gutenberg header
+Returns: map from each word to the number of times it appears.
+"""
     hist = {}
     fp = file(filename)
 
@@ -34,8 +22,8 @@ def process_file(filename, skip_header=True):
 def skip_gutenberg_header(fp):
     """Reads from fp until it finds the line that ends the header.
 
-    fp: open file object
-    """
+fp: open file object
+"""
     for line in fp:
         if line.startswith('*END*THE SMALL PRINT!'):
             break
@@ -44,11 +32,11 @@ def skip_gutenberg_header(fp):
 def process_line(line, hist):
     """Adds the words in the line to the histogram.
 
-    Modifies hist.
+Modifies hist.
 
-    line: string
-    hist: histogram (map from word to frequency)
-    """
+line: string
+hist: histogram (map from word to frequency)
+"""
     # replace hyphens with spaces before splitting
     line = line.replace('-', ' ')
     
@@ -63,28 +51,30 @@ def process_line(line, hist):
 
 def most_common(hist):
     """Makes a list of the key-value pairs from a histogram and
-    sorts them in descending order by frequency.
+sorts them in descending order by frequency.
 
-    hist: map from word to the number of times it appears
+hist: map from word to the number of times it appears
 
-    returns: list of (word, frequency) pairs, sorted by frequency
-    """
+returns: list of (word, frequency) pairs, sorted by frequency
+"""
     t = []
-    res = []
-    for word,freq in hist.items():
-        t.append((freq,word))
-    t.sort (reverse = True)
+    for word, freq in hist.items():
+        t.append((freq, word))
+    
+    t.sort(reverse=True)
 
-    for freq,word in t:
-        res.append((word,freq))
+    res = []
+    for freq, word in t:
+        res.append((word, freq))
+
     return res
-    
+
+
 def print_most_common(hist, num=10):
-    """Prints the most commons words in a histgram and their frequencies.
-    
-    hist: histogram (map from word to frequency
-    num: number of words to print
-    """
+    """Prints the most commons words in a histogram and their frequencies.
+hist: histogram (map from word to frequency
+num: number of words to print
+"""
     t = most_common(hist)
     print 'The most common words are:'
     for freq, word in t[:num]:
@@ -94,14 +84,16 @@ def print_most_common(hist, num=10):
 def subtract(d1, d2):
     """Returns a dictionary with all keys that appear in d1 but not d2.
 
-    d1, d2: dictionaries
+d1, d2: dictionaries
 
-    returns: new dictionary
-    """
+returns: new dictionary
+"""
+    s1 = set(d1.keys())
+    s2 = set(d2.keys())
+    s = s1 - s2
     res = {}
-    for key in d1:
-        if key not in d2:
-            res[key] = d1[key]
+    for word in s:
+        res[word] = d1[word]
     return res
 
 
@@ -118,13 +110,13 @@ def different_words(hist):
 def random_word(hist):
     """Chooses a random word from a histogram.
 
-    The probability of each word is proportional to its frequency.
-    """
+The probability of each word is proportional to its frequency.
+"""
     t = []
-    for word,freq in hist.items():
-        for i in range(freq):
-            t.append(word)
-    return random.choice (t)
+    for word, freq in hist.items():
+        t.extend([word] * freq)
+    
+    return random.choice(t)
 
 
 if __name__ == '__main__':
@@ -147,4 +139,5 @@ if __name__ == '__main__':
     print "\n\nHere are some random words from the book"
     for i in range(100):
         print random_word(hist),
+
 
